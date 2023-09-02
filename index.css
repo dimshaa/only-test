@@ -4,18 +4,15 @@
   padding: 0;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
 .layout {
+  margin: 0 auto;
   position: relative;
-  background: center url('./images/bg.png');
+  background: no-repeat center url('./images/bg.png');
   width: 100vw;
   height: 100vh;
   min-width: 1280px;
   max-width: 1920px;
+  min-height: 750px;
 }
 
 .layout::before {
@@ -55,7 +52,6 @@ body {
   display: block;
   width: 10px;
   height: 10px;
-  z-index: 5;
   background-color: transparent;
   background-image: url('./images/plus.svg');
   background-position: center;
@@ -64,7 +60,6 @@ body {
 }
 
 .mark__text {
-  margin: 0;
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
