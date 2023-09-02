@@ -13,27 +13,15 @@ const markData = [
 {color: 'green', text: 'Отель', position: {top: '790px', left: '1107px'}},
 ];
 
-
 const renderMark = (data) => {
   const markTemplate = document.querySelector('#mark-template').content;
   const mark = markTemplate.querySelector('.mark').cloneNode(true);
 
   mark.classList.add(`mark_color_${data.color}`);
-  
-  // if (!data.position.right || data.position.left) {
-  //   return
-  // }
 
   mark.style.top = `calc(${data.position.top} + (100% - 1080px) / 2)`;
   mark.style.left = `calc(${data.position.left} + (100% - 1920px) / 2)`;
   mark.style.right = `calc(${data.position.right} + (100% - 1850px) / 2)`;
-  // calc((data.position.top / 1080px) * 100%)
-  // console.log(`calc((${data.position.top} / 1080px) * 100%)`)
-  // mark.style.top = parseInt(data.position.top.replace('px', '')) / 1080 * 100 + "%"
-  // mark.style.left = parseInt(data.position.left.replace('px', '')) / 1920 * 100 + "%"
-
-  // mark.style.right = parseInt(data.position.right.replace('px', '')) / 1920 * 100 + "%"
-  // console.log(parseInt(data.position.top.replace('px', '')))
 
   mark.querySelector('.mark__text').textContent = data.text;
 
@@ -43,7 +31,7 @@ const renderMark = (data) => {
 markData.map(mark => {
   const newMark = renderMark(mark);
 
-  layout.prepend(newMark);
+  layout.append(newMark);
 });
 
 layout.addEventListener('click', (e) => {
@@ -52,6 +40,6 @@ layout.addEventListener('click', (e) => {
 
     activeMarks.forEach(mark => mark.classList.remove('active'));
   } else {
-    e.target.closest('.mark').classList.toggle('active')
+    e.target.closest('.mark').classList.toggle('active');
   }
 });
