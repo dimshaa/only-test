@@ -6,6 +6,8 @@
 Использовались JS, HTML, CSS.
 Разметка кнопок генерируется с помощью JS.
 
-**Скопировать проект:**
-    git clone git@github.com:dimshaa/only-test.git
+**Скопировать проект:**  
+```
+git clone git@github.com:dimshaa/only-test.git
+```
 
